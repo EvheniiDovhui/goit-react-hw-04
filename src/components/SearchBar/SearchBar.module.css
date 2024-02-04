@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(8, 168, 255);
+  height: 50px;
+  border-radius: 8px;
+}
+.input {
+  background-color: antiquewhite;
+  border: 2px solid #3498db;
+  padding: 4px;
+  border-radius: 8px;
+}
