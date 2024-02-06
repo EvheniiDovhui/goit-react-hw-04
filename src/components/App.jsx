@@ -64,7 +64,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div>
       <SearchBar onSubmit={handleSearchSubmit} />
       {error && <ErrorMessage message={error} />}
       <ImageGallery images={images} onImageClick={handleImageClick} />
