@@ -11,7 +11,7 @@ const ImageModal = ({ imageUrl, onClose }) => {
   useEffect(() => {
     if (imageUrl) {
       setModalIsOpen(true);
-      openModal(); // Відкрити модальне вікно, заборонити прокрутку
+      openModal();
     }
   }, [imageUrl]);
 
@@ -27,11 +27,11 @@ const ImageModal = ({ imageUrl, onClose }) => {
   };
 
   const openModal = () => {
-    document.body.style.overflow = 'hidden'; // Заборонити прокрутку сторінки
+    document.body.style.overflow = 'hidden';
   };
 
   const restoreScroll = () => {
-    document.body.style.overflow = ''; // Відновити прокрутку сторінки
+    document.body.style.overflow = '';
   };
 
   return (
@@ -44,7 +44,7 @@ const ImageModal = ({ imageUrl, onClose }) => {
       onAfterOpen={() => document.addEventListener('keydown', handleKeyDown)}
       onAfterClose={() => {
         document.removeEventListener('keydown', handleKeyDown);
-        restoreScroll(); // Відновити прокрутку після закриття модального вікна
+        restoreScroll();
       }}
     >
       <img src={imageUrl} alt="img" className={css.image} />{' '}
