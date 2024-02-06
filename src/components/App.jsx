@@ -26,7 +26,7 @@ const App = () => {
 
       try {
         const response = await axios.get(
-          `https://api.unsplash.com/search/photos?page=${page}&query=${query}&per_page=10`,
+          `https://api.unsplash.com/search/photos?page=${page}&query=${query}&per_page=12&orientation=landscape`,
           {
             headers: {
               Authorization:
@@ -67,17 +67,13 @@ const App = () => {
     <div className="app">
       <SearchBar onSubmit={handleSearchSubmit} />
       {error && <ErrorMessage message={error} />}
+      <ImageGallery images={images} onImageClick={handleImageClick} />
       {loading ? (
         <LoaderComponent />
       ) : (
-        <>
-          <ImageGallery images={images} onImageClick={handleImageClick} />
-          {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
-        </>
+        images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />
       )}
-      {selectedImage && (
-        <ImageModal imageUrl={selectedImage} onClose={handleCloseModal} />
-      )}
+      <ImageModal imageUrl={selectedImage} onClose={handleCloseModal} />
     </div>
   );
 };

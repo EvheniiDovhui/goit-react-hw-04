@@ -1,10 +1,13 @@
-import React from 'react';
+import { IoReloadSharp } from 'react-icons/io5';
+import css from './LoadMoreBtn.module.css';
 
 const LoadMoreBtn = ({ onClick }) => {
   return (
-    <button className="load-more-btn" onClick={onClick}>
-      Завантажити ще
-    </button>
+    <div className={css.div}>
+      <button className={css.loadMoreBtn} onClick={onClick}>
+        <IoReloadSharp className={css.icon} />
+      </button>
+    </div>
   );
 };
 
