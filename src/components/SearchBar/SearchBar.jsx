@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -10,7 +9,7 @@ const SearchBar = ({ onSubmit }) => {
     if (query.trim() !== '') {
       onSubmit(query);
     } else {
-      toast.error('Будь ласка, введіть текст для пошуку зображень.');
+      toast.error('Please enter text to search for images.');
     }
   };
 
@@ -24,10 +23,10 @@ const SearchBar = ({ onSubmit }) => {
           onChange={e => setQuery(e.target.value)}
           autoComplete="off"
           autoFocus
-          placeholder="Пошук зображень та фото"
+          placeholder="Search images and photos"
         />
         <button className={css.button} type="submit">
-          Пошук
+          Search
         </button>
       </form>
       <Toaster />
