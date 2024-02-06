@@ -1,20 +1,20 @@
 import css from './ImageGallery.module.css';
-const ImageGallery = ({ images }) => {
+
+const ImageGallery = ({ images, onImageClick }) => {
   if (images.length === 0) {
     return null;
   }
 
   return (
-    <ul className="image-gallery">
+    <ul className={css.gallery}>
       {images.map(image => (
-        <li key={image.id}>
-          <div className={css.li}>
-            <img
-              className={css.img}
-              src={image.urls.regular}
-              alt={image.alt_description}
-            />
-          </div>
+        <li key={image.id} className={css.galleryItem}>
+          <img
+            src={image.urls.regular}
+            alt={image.alt_description}
+            className={css.galleryItemImg}
+            onClick={() => onImageClick(image.urls.regular)}
+          />
         </li>
       ))}
     </ul>

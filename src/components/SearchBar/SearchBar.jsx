@@ -15,8 +15,8 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <header className={css.header}>
-      <form onSubmit={handleSubmit}>
+    <header className={css['search-container']}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
           className={css.input}
           type="text"
@@ -26,7 +26,9 @@ const SearchBar = ({ onSubmit }) => {
           autoFocus
           placeholder="Пошук зображень та фото"
         />
-        <button type="submit">Пошук</button>
+        <button className={css.button} type="submit">
+          Пошук
+        </button>
       </form>
       <Toaster />
     </header>

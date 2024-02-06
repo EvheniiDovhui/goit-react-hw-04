@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Modal from 'react-modal';
+import css from './ImageModal.module.css'; // імпорт стилів для модального вікна
 
 const ImageModal = ({ isOpen, imageUrl, onClose }) => {
   // При монтуванні компонента встановлюємо обробник клавіші ESC
@@ -20,11 +21,15 @@ const ImageModal = ({ isOpen, imageUrl, onClose }) => {
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel="Image Modal"
-      className="modal"
-      overlayClassName="modal-overlay"
+      className={css.modal} // використовуємо стилі для модального вікна
+      overlayClassName={css.overlay} // використовуємо стилі для оверлею
     >
-      <img src={imageUrl} alt="Full size" />
-      <button onClick={onClose}>Закрити</button>
+      <img src={imageUrl} alt="Full size" className={css.image} />{' '}
+      {/* використовуємо стилі для зображення */}
+      <button onClick={onClose} className={css.closeButton}>
+        Закрити
+      </button>{' '}
+      {/* використовуємо стилі для кнопки закриття */}
     </Modal>
   );
 };
