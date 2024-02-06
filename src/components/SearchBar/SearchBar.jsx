@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import css from './SearchBar.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 
